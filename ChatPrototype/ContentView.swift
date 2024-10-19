@@ -14,10 +14,10 @@ struct ContentView: View {
                 Image(systemName: "paperplane.fill")
                     .foregroundStyle(.background)
             }
-            Text("by Mirsadra Molaei")
+            Text("by Mahsa Pirani")
                 .font(.subheadline)
                 .padding()
-                .background(Color.teal, in: RoundedRectangle(cornerRadius: 8))
+                .background(Color.blue, in: RoundedRectangle(cornerRadius: 8))
         }
         .padding()
     }
