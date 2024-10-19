@@ -5,11 +5,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            RoundedRectangle(cornerSize: CGSize(width: 40, height: 40))
+                .fill(Color.blue)
+                .frame(width: 110, height: 110)
+            Image(systemName: "paperplane.fill")
+                .foregroundStyle(.background)
         }
         .padding()
     }
