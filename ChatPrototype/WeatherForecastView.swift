@@ -1,15 +1,29 @@
-//
 //  WeatherForecastView.swift
 //  ChatPrototype
-//
-//  Created by Mirsadra on 2024. 10. 19..
-//
 
 import SwiftUI
 
 struct WeatherForecastView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack {
+                Text("Mon")
+                Image(systemName: "sun.max.fill")
+                    .foregroundStyle(Color.yellow)
+                Text("High: 70")
+                Text("Low: 50")
+            }
+            .padding()
+            
+            VStack {
+                Text("Tue")
+                Image(systemName: "cloud.rain.fill")
+                    .foregroundStyle(Color.blue)
+                Text("High: 60")
+                Text("Low: 40")
+            }
+            .padding()
+        }
     }
 }
 
