@@ -6,16 +6,9 @@ import SwiftUI
 struct WeatherForecastView: View {
     var body: some View {
         HStack {
-            ExtractedView()
+            DayForecast(day: "Mon")
             
-            VStack {
-                Text("Tue")
-                Image(systemName: "cloud.rain.fill")
-                    .foregroundStyle(Color.blue)
-                Text("High: 60")
-                Text("Low: 40")
-            }
-            .padding()
+            DayForecast(day: "Tue")
         }
     }
 }
@@ -24,10 +17,13 @@ struct WeatherForecastView: View {
     WeatherForecastView()
 }
 
-struct ExtractedView: View {
+struct DayForecast: View {
+    let day: String     // day is a property of type String
+    
+    
     var body: some View {
         VStack {
-            Text("Mon")
+            Text(day)
             Image(systemName: "sun.max.fill")
                 .foregroundStyle(Color.yellow)
             Text("High: 70")
