@@ -6,14 +6,7 @@ import SwiftUI
 struct WeatherForecastView: View {
     var body: some View {
         HStack {
-            VStack {
-                Text("Mon")
-                Image(systemName: "sun.max.fill")
-                    .foregroundStyle(Color.yellow)
-                Text("High: 70")
-                Text("Low: 50")
-            }
-            .padding()
+            ExtractedView()
             
             VStack {
                 Text("Tue")
@@ -29,4 +22,17 @@ struct WeatherForecastView: View {
 
 #Preview {
     WeatherForecastView()
+}
+
+struct ExtractedView: View {
+    var body: some View {
+        VStack {
+            Text("Mon")
+            Image(systemName: "sun.max.fill")
+                .foregroundStyle(Color.yellow)
+            Text("High: 70")
+            Text("Low: 50")
+        }
+        .padding()
+    }
 }
