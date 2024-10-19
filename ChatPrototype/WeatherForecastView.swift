@@ -5,10 +5,18 @@ import SwiftUI
 
 struct WeatherForecastView: View {
     var body: some View {
-        HStack {
-            DayForecast(day: "Mon", isRainy: false, high: 70, low: 50)
-            
-            DayForecast(day: "Tue", isRainy: true, high: 60, low: 40)
+        ScrollView(.horizontal, showsIndicators: true) {
+            HStack {
+                DayForecast(day: "Mon", isRainy: false, high: 21, low: -1)
+                
+                DayForecast(day: "Tue", isRainy: true, high: 24, low: 3)
+                
+                DayForecast(day: "Wed", isRainy: true, high: 37, low: 6)
+                
+                DayForecast(day: "Thu", isRainy: false, high: 18, low: 7)
+                
+                DayForecast(day: "Fri", isRainy: true, high: 17, low: -4)
+            }
         }
     }
 }
@@ -23,7 +31,7 @@ struct DayForecast: View {
     let high: Int8
     let low: Int8
     
-    // isRainy property is Bool, so you've to create a compound property (aka: accessor) that represents the icon's name
+    // For Bool you've to create a compound property (aka: accessor) that represents the icon's name
     var iconName: String {
         return isRainy ? "cloud.rain.fill" : "sun.max.fill"
     }
