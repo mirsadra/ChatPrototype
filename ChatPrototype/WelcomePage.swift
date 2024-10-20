@@ -10,11 +10,15 @@ struct WelcomePage: View {
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .fontWidth(.condensed)
+                .border(.secondary, width: 1.5)
             Text("Enjoy the suggestions to wear a suitable outfit for this weather")
                 .font(.headline)
                 .multilineTextAlignment(.center)
+                .border(.secondary, width: 1.5)
         }
+        .border(.tint, width: 5)
         .padding()
+        .border(.indigo, width: 5)
     }
 }
 
