@@ -8,11 +8,12 @@ struct WelcomePage: View {
         VStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 30)
-                    .frame(width: 130, height: 130)
+                    .frame(width: 150, height: 150)
                     .foregroundStyle(.tint)
+                
                 Image(systemName: "sun.rain.fill")
-                    .font(Font.largeTitle)
-                    .foregroundStyle(.blue)
+                    .font(Font.system(size: 80))
+                    .foregroundStyle(.white)
      
                 // Yellow part (sun)
                 Image(systemName: "sun.rain.fill")
