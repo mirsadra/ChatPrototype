@@ -16,9 +16,9 @@ struct WelcomePage: View {
                 .multilineTextAlignment(.center)
                 .border(.secondary, width: 1.5)
         }
-        .border(.tint, width: 5)
+        .border(.tint, width: 3)
         .padding()
-        .border(.indigo, width: 5)
+        .border(.indigo, width: 10)
     }
 }
 
