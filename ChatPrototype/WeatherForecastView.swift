@@ -7,15 +7,15 @@ struct WeatherForecastView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: true) {
             HStack {
-                DayForecast(day: "Mon", isRainy: false, high: 21, low: -1)
+                DayForecast(day: "Mon", isRainy: false, isHoodie: false, high: 21, low: -1)
                 
-                DayForecast(day: "Tue", isRainy: true, high: 24, low: 3)
+                DayForecast(day: "Tue", isRainy: false, isHoodie: false, high: 24, low: 3)
                 
-                DayForecast(day: "Wed", isRainy: true, high: 37, low: 6)
+                DayForecast(day: "Wed", isRainy: true, isHoodie: true, high: 37, low: 6)
                 
-                DayForecast(day: "Thu", isRainy: false, high: 18, low: 7)
+                DayForecast(day: "Thu", isRainy: false, isHoodie: false, high: 18, low: 7)
                 
-                DayForecast(day: "Fri", isRainy: true, high: 17, low: -4)
+                DayForecast(day: "Fri", isRainy: true, isHoodie: true, high: 17, low: -4)
             }
         }
     }
@@ -28,6 +28,7 @@ struct WeatherForecastView: View {
 struct DayForecast: View {
     let day: String     // day is a stored property of type String
     let isRainy: Bool
+    let isHoodie: Bool
     let high: Int8
     let low: Int8
     
@@ -39,6 +40,10 @@ struct DayForecast: View {
     var iconColor: Color {
         return isRainy ? Color.blue : Color.yellow
     }
+    
+    var hoodieIcon: Image {
+         return isHoodie ? Image("hoodie") : Image("t-shirt")
+     }
     
     var body: some View {
         VStack {
@@ -53,7 +58,10 @@ struct DayForecast: View {
             Text("Low: \(low)ºC")
                 .fontWeight(.medium)
                 .foregroundStyle(Color.secondary)
+            hoodieIcon
+                .scaledToFit()
         }
         .padding()
     }
 }
+
